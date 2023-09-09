@@ -39,11 +39,11 @@ public class ClickMoveBlock : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        GameObject blockSpawn = Test(SwapMousePos(Input.mousePosition));
+        GameObject blockSpawn = GetBlockBgByMouse(SwapMousePos(Input.mousePosition));
         if (blockSpawn != null)
         {
             InstanceBlockAtTarget(blockSpawn.transform.position);
-            blockMove.GetComponent<CheckBlockSame>().Check(null);
+            MergeBlockCtrl.Instance.GetAllBlockToMerge(blockMove);
             blockSpawn.GetComponent<ChooseBgBlock>().isChoose = true;
             PosSpawnBlock.Instance.InstantiateBlock();
         }
@@ -72,7 +72,7 @@ public class ClickMoveBlock : MonoBehaviour
         blockMove.transform.position = target;
         blockMove.transform.SetParent(holder);
     }
-    protected GameObject Test(Vector2 mousePos)
+    protected GameObject GetBlockBgByMouse(Vector2 mousePos)
     {
         foreach (GameObject squareObject in squareObjects)
         {
@@ -85,7 +85,7 @@ public class ClickMoveBlock : MonoBehaviour
         }
         return null;
     }
-    pub GameObject Test2(Vector2 mousePos)
+    public GameObject GetBlockBgByBlock(Vector2 mousePos)
     {
         foreach (GameObject squareObject in squareObjects)
         {

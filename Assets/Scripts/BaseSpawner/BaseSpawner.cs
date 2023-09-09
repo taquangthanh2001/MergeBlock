@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Spawner : MonoBehaviour
+public abstract class BaseSpawner : MonoBehaviour
 {
     [SerializeField] protected Transform holder;
 

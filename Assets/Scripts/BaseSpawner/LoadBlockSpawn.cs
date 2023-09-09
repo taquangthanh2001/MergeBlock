@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LoadBlockSpawn : Spawner
+public abstract class LoadBlockSpawn : BaseSpawner
 {
     [SerializeField] protected List<Transform> prefabs;
     protected List<Transform> objPools;

@@ -29,6 +29,13 @@ public class PosSpawnBlock : MonoBehaviour
 
     public void InstantiateBlock()
     {
+        int value = RandomValueBlock();
+        blockSpawner.valueImg = value;
         blockSpawner.SpawnWithPool(GameConst.Block, transform.position);
+
+    }
+    protected int RandomValueBlock()
+    {
+        return Random.Range(1, 6);
     }
 }

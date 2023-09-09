@@ -1,6 +1,6 @@
 public static class GameConst
 {
-    //Monster
-    public static string Monster_Hourse = "Hourse";
+    //Obj Spawn
     public static string Block = "Block";
+    public static string Text = "Text";
 }

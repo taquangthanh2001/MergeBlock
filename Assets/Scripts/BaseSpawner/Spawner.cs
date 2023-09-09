@@ -1,18 +1,7 @@
 using UnityEngine;
 
-public class BlockSpawner : LoadBlockSpawn
+public class Spawner : LoadBlockSpawn
 {
-    protected static BlockSpawner instance;
-    public static BlockSpawner Instance { get { return instance; } }
-
-    [SerializeField] private Transform parentSpawn;
-
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-    }
-
     protected virtual Transform GetObjectFromPool(Transform prefabs)
     {
         objPools ??= new();
@@ -40,10 +29,8 @@ public class BlockSpawner : LoadBlockSpawn
         }
         var newprefab = this.GetObjectFromPool(prefab);
         newprefab.position = pos;
-        newprefab.SetParent(parentSpawn);
-        parentSpawn.GetComponent<ClickMoveBlock>().SetBlock(newprefab.gameObject);
+        newprefab.SetParent(holder);
         newprefab.gameObject.SetActive(true);
-
         return newprefab;
     }
 
