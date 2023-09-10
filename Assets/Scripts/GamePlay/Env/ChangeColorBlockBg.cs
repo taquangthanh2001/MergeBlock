@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangeColorBlock : MonoBehaviour
+public class ChangeColorBlockBg : MonoBehaviour
 {
-    protected static ChangeColorBlock instance;
-    public static ChangeColorBlock Instance { get { return instance; } }
+    protected static ChangeColorBlockBg instance;
+    public static ChangeColorBlockBg Instance { get { return instance; } }
 
     [SerializeField] protected Color colorChange;
     [SerializeField] protected Color colorDef;

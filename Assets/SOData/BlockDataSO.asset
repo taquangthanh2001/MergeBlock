@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6659c7adefb2841940efec4d1d076b, type: 3}
+  m_Name: BlockDataSO
+  m_EditorClassIdentifier: 
+  blockDatas:
+  - id: 1
+    sprites:
+    - spriteBlock: {fileID: 21300000, guid: 6afdf38fe0ec93b4abd06ce0ed42fa50, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 0d86d320556fa0848970c78182ab7d87, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: d62f5593c247b6d42addf59dff87ce82, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: b2357da86b4ccac4c97808b7613519a2, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 0568fc51b5cce174f8eabda31893b1b5, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 3f878e04a7d6d0a439ab9bb152adf148, type: 3}
+  - id: 2
+    sprites:
+    - spriteBlock: {fileID: 21300000, guid: dc0c68cb977f3fd4e91167d71c3f9304, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: f60a3ec854db0cb4bbf45382de361640, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: dd035479f5e9dd54abfe2e75521f77eb, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 865d19dafbec3854f98587ee3c02d7ac, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 5db3fdeaee5e04f498a2d34b2e257e89, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: e7da238f4b8c55d4e8140adfbc787096, type: 3}
+  - id: 3
+    sprites:
+    - spriteBlock: {fileID: 21300000, guid: af98675c3396e5b43a74a3b660d3fa9f, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 20d374bc5fd9ba543a5247a5b0243a63, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: ef8738eba3582234b8705be61c78c974, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 53eca2507225ae64188f1a215ba2a927, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 42cbd3f0ffc7f8346832b450bbec8071, type: 3}
+    - spriteBlock: {fileID: 21300000, guid: 05619c6da0223d440a7a01b23ba6dfa3, type: 3}

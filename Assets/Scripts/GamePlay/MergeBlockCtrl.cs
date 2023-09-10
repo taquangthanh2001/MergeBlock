@@ -28,10 +28,7 @@ public class MergeBlockCtrl : MonoBehaviour
                     !blocks.Contains(collider.gameObject) &&
                      collider.gameObject.GetComponent<ChangeImageBlock>().value == blocks[0].GetComponent<ChangeImageBlock>().value)
             {
-                if (collider.gameObject.name == "Block" && !blocks.Contains(collider.gameObject))
-                {
-                    GetAllBlockToMerge(collider.gameObject);
-                }
+                GetAllBlockToMerge(collider.gameObject);
             }
         }
         await Task.Yield();
@@ -55,6 +52,9 @@ public class MergeBlockCtrl : MonoBehaviour
             ckbs.SetSprite(ckbs.value + 1);
             var text = TextSpawner.Instance.SpawnWithPool(GameConst.Text, blockToMerge.transform.position);
             text.GetComponent<TextSpawned>().toe = 1f;
+            int score = (ckbs.value - 1) * (blocks.Count + 1);
+            text.GetComponent<TextSpawned>().AddPoint(score);
+            HeaderPanel.Instance.AddScore(score);
             blocks.Clear();
             GetAllBlockToMerge(blockToMerge);
         }

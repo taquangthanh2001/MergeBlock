@@ -2,11 +2,11 @@ public static class SessionPref
 {
     private static UserData _userData;
     private static DataGamePlay _dataGamePlay;
-    public static UserData GetCurrentData()
+    public static UserData GetUserData()
     {
         return _userData;
     }
-    public static void SetCurrentData(UserData userData)
+    public static void SetUserData(UserData userData)
     {
         _userData = userData;
     }

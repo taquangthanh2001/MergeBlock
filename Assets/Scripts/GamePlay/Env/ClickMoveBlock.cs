@@ -85,13 +85,13 @@ public class ClickMoveBlock : MonoBehaviour
         }
         return null;
     }
-    public GameObject GetBlockBgByBlock(Vector2 mousePos)
+    public GameObject GetBlockBgByBlock(Vector2 block)
     {
         foreach (GameObject squareObject in squareObjects)
         {
             Collider2D squareCollider = squareObject.GetComponent<Collider2D>();
 
-            if (squareCollider.OverlapPoint(mousePos) && squareObject.GetComponent<ChooseBgBlock>().isChoose)
+            if (squareCollider.OverlapPoint(block) && squareObject.GetComponent<ChooseBgBlock>().isChoose)
             {
                 return squareObject;
             }
