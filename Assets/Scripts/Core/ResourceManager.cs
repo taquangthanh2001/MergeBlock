@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BubblesShot
+namespace MergeBlock
 {
     public partial class ResourceManager : Singleton<ResourceManager>
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace BubblesShot
+namespace MergeBlock
 {
     public class UICameraManager : Singleton<UICameraManager>
     {

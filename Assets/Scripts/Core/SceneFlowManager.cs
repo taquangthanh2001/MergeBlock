@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BubblesShot
+namespace MergeBlock
 {
     public enum Scenes
     {
-        BubbleLoading,
-        BubbleGameplay
+        StartUp,
+        GamePlay,
     }
     public class SceneFlowManager : Singleton<SceneFlowManager>
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-namespace BubblesShot
+namespace MergeBlock
 {
     public static class Utils
     {

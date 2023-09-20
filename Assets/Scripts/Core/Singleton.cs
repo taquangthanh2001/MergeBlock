@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace BubblesShot
+namespace MergeBlock
 {
     public class Singleton<T> : MonoBehaviour where T : Singleton<T>
     {

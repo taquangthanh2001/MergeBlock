@@ -35,7 +35,7 @@ public class MergeBlockCtrl : MonoBehaviour
         MergeBlock();
     }
 
-    protected void MergeBlock()
+    protected async void MergeBlock()
     {
         var blockToMerge = blocks.FirstOrDefault();
         if (blocks.Count > 2)
@@ -56,6 +56,16 @@ public class MergeBlockCtrl : MonoBehaviour
             text.GetComponent<TextSpawned>().AddPoint(score);
             HeaderPanel.Instance.AddScore(score);
             blocks.Clear();
+            if (ckbs.value > 5)
+            {
+                BlockSpawner.Instance.InsertToObjPool(blockToMerge.transform);
+                var g = ClickMoveBlock.Instance.GetBlockBgByBlock(blockToMerge.transform.position);
+                if (g != null)
+                    g.GetComponent<ChooseBgBlock>().isChoose = false;
+                return;
+            }
+            SoundManager.Instance.OnEffectMerger(blockToMerge.transform.position);
+            await Task.Delay(1000);
             GetAllBlockToMerge(blockToMerge);
         }
         else

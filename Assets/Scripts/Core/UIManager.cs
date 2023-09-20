@@ -1,11 +1,9 @@
+using MergeBlock;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
-
-namespace BubblesShot
-{
     public class QueuedScreen
     {
         public UIScreen screen;
@@ -373,4 +371,3 @@ namespace BubblesShot
         //    ShowPopup("AssetBundles/GameScene/Prefabs/windows/toast/ToastMessage", info);
         //}
     }
-}
