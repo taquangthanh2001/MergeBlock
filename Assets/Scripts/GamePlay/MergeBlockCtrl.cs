@@ -43,32 +43,44 @@ public class MergeBlockCtrl : MonoBehaviour
             blocks.Remove(blockToMerge);
             foreach (var a in blocks)
             {
-                BlockSpawner.Instance.InsertToObjPool(a.transform);
-                var g = ClickMoveBlock.Instance.GetBlockBgByBlock(a.transform.position);
-                if (g != null)
-                    g.GetComponent<ChooseBgBlock>().isChoose = false;
+                ClearBlockMerge(a.transform);
             }
-            ChangeImageBlock ckbs = blockToMerge.GetComponent<ChangeImageBlock>();
-            ckbs.SetSprite(ckbs.value + 1);
+            ChangeImageBlock upgradeImg = blockToMerge.GetComponent<ChangeImageBlock>();
+            upgradeImg.SetSprite(upgradeImg.value + 1);
             var text = TextSpawner.Instance.SpawnWithPool(GameConst.Text, blockToMerge.transform.position);
             text.GetComponent<TextSpawned>().toe = 1f;
-            int score = (ckbs.value - 1) * (blocks.Count + 1);
+            int score = (upgradeImg.value - 1) * (blocks.Count + 1);
             text.GetComponent<TextSpawned>().AddPoint(score);
             HeaderPanel.Instance.AddScore(score);
             blocks.Clear();
-            if (ckbs.value > 5)
+            SoundManager.Instance.OnEffectMerger(blockToMerge.transform.position);
+            if (upgradeImg.value > 5)
             {
-                BlockSpawner.Instance.InsertToObjPool(blockToMerge.transform);
-                var g = ClickMoveBlock.Instance.GetBlockBgByBlock(blockToMerge.transform.position);
-                if (g != null)
-                    g.GetComponent<ChooseBgBlock>().isChoose = false;
+                //MoveBlockMax(blockToMerge.transform);
+                await Task.Delay(1000);
+                ClearBlockMerge(blockToMerge.transform);
                 return;
             }
-            SoundManager.Instance.OnEffectMerger(blockToMerge.transform.position);
             await Task.Delay(1000);
             GetAllBlockToMerge(blockToMerge);
         }
         else
             blocks.Clear();
+    }
+
+    protected async void MoveBlockMax(Transform tf)
+    {
+        Vector3 up = tf.position + Vector3.up;
+        tf.position = Vector3.Lerp(tf.position, up, 1f);
+        await Task.Delay(500);
+        await Task.Yield();
+        ClearBlockMerge(tf);
+    }
+    protected void ClearBlockMerge(Transform tf)
+    {
+        BlockSpawner.Instance.InsertToObjPool(tf);
+        var g = ClickMoveBlock.Instance.GetBlockBgByBlock(tf.position);
+        if (g != null)
+            g.GetComponent<ChooseBgBlock>().isChoose = false;
     }
 }
